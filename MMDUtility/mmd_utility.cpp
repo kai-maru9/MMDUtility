@@ -203,15 +203,18 @@ namespace control
 
 MMDUtility::MMDUtility(IDirect3DDevice9* device) : device_(device)
 {
-  auto hwnd = getHWND();
-  ctrl_ = new control::Control();
-  auto menu = new control::MenuDelegate(ctrl_);
-  menu->SetWindow(hwnd, L"MMDUtility");
-  top_menu_ = menu;
-  DrawMenuBar(hwnd);
+    ctrl_ = new control::Control();
 }
 
-void MMDUtility::WndProc(const CWPSTRUCT* param)
+void MMDUtility::start() {
+    auto hwnd = getHWND();
+    auto menu = new control::MenuDelegate(ctrl_);
+    menu->SetWindow(hwnd, L"MMDUtility");
+    top_menu_ = menu;
+    DrawMenuBar(hwnd);
+}
+
+void MMDUtility::WndProc(CWPSTRUCT* param)
 {
   //ctrl_.WndProc(param);
   switch ( param->message )
@@ -225,7 +228,7 @@ void MMDUtility::WndProc(const CWPSTRUCT* param)
   //printf("%x %x %x\n", param->message, param->lParam, param->wParam);
 }
 
-void MMDUtility::MsgProc(int code, const MSG* param)
+void MMDUtility::MsgProc(int code, MSG* param)
 {
   ctrl_->WndProc(code, param);
   //printf("%x %lld %lld\n", param->message, param->lParam, param->wParam);

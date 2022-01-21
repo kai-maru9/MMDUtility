@@ -532,7 +532,7 @@ public:
 
   const char* getPluginTitle() const override { return "MMDUtlity_AutoSave"; }
 
-  void MouseProc(WPARAM, const MOUSEHOOKSTRUCT*) override
+  void MouseProc(WPARAM, MOUSEHOOKSTRUCT*) override
   {
     auto end = std::chrono::system_clock::now();
 

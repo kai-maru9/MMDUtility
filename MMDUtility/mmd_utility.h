@@ -156,9 +156,11 @@ public:
 
   explicit MMDUtility(IDirect3DDevice9* device);
 
-  void WndProc(const CWPSTRUCT* param) override;
+  void start() override;
 
-  void MsgProc(int code, const MSG* param) override;
+  void WndProc(CWPSTRUCT* param) override;
+
+  void MsgProc(int code, MSG* param) override;
 
   std::pair<bool, LRESULT> WndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) override;
 

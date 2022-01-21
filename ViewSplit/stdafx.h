@@ -20,5 +20,6 @@
 #include <array>
 #include <Commctrl.h>
 #include <fstream>
+#define _SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING
 #include <experimental/filesystem>
 namespace filesystem = std::experimental::filesystem;

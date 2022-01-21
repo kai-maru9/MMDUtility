@@ -705,7 +705,7 @@ public:
 
   const char* getPluginTitle() const override { return "MMDUtility_ViewSplit"; }
 
-  void MouseProc(WPARAM wParam, const MOUSEHOOKSTRUCT* mouseObj) override
+  void MouseProc(WPARAM wParam, MOUSEHOOKSTRUCT* mouseObj) override
   {
     switch ( wParam )
     {
