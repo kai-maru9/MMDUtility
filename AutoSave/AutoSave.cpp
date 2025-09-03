@@ -485,7 +485,7 @@ public:
 このメッセージは自動バックアップのタイミングで毎回表示されます。)", L"警告", MB_OK);
       return;
     }
-    auto save_func = (void(*)(mmp::MMDMainData*))((char*) GetModuleHandleW(nullptr) + 0x750D0);
+    auto save_func = (void(*)(mmp::MMDMainData*))((char*) GetModuleHandleW(nullptr) + 0xDB4F3);
     is_saving = true;
     save_func(mmp::getMMDMainData());
   }
